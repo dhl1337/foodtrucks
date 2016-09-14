@@ -40,8 +40,8 @@ io.on('connection', socket => {
 // // User Endpoints
 // require('./routes/userRoutes.js')(app);
 //
-// // Foodtruck Endpoints
-// require('./routes/foodtruckRoutes.js')(app);
+// Foodtruck Endpoints
+require('./foodtruck/FoodtruckRoute')(app);
 //
 // // Reviews
 // require('./routes/reviewRoutes.js')(app);

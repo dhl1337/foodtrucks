@@ -18,7 +18,7 @@ module.exports = {
                 err ? res.status(500).send(err) : res.json(result);
             })
     },
-    delete(req, res) {
+    deleteFoodtruck(req, res) {
         let idToDelete = req.params.id;
         Foodtruck
             .remove({_id: idToDelete}, err => {
