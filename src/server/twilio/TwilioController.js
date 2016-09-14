@@ -1,4 +1,3 @@
-import Foodtruck from './../models/foodtruck.js';
 import config from '../configs/config';
 
 const client = require('twilio')(config.twilio.ACCOUNT_SID, config.twilio.AUTH_TOKEN);

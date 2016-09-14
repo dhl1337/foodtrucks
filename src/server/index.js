@@ -10,10 +10,10 @@ import config from './configs/config'
 // Express
 let app = express();
 
-mongoose.connect(config.db.url);
-mongoose.connection.once('open', () => console.log("Successfully connected to mongodb"));
+// mongoose.connect(config.db.url);
+// mongoose.connection.once('open', () => console.log("Successfully connected to mongodb"));
 
-require('./config/passport.js')(passport);
+//require('./config/passport.js')(passport);
 
 // Express Middleware
 app.use(expressSession(config.session));
@@ -35,19 +35,19 @@ io.on('connection', socket => {
 });
 
 // Facebook Authentication Endpoints
-require('./routes/facebookRoutes.js')(app);
-
-// User Endpoints
-require('./routes/userRoutes.js')(app);
-
-// Foodtruck Endpoints
-require('./routes/foodtruckRoutes.js')(app);
-
-// Reviews
-require('./routes/reviewRoutes.js')(app);
+// require('./routes/facebookRoutes.js')(app);
+//
+// // User Endpoints
+// require('./routes/userRoutes.js')(app);
+//
+// // Foodtruck Endpoints
+// require('./routes/foodtruckRoutes.js')(app);
+//
+// // Reviews
+// require('./routes/reviewRoutes.js')(app);
 
 // Twilio
-require('./routes/twilioRoutes.js')(app);
+require('./twilio/TwilioRoute')(app);
 
 // Connections
 let port = config.port;
