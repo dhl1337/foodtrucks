@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 import foodtruckSchema from '../foodtruck/FoodtruckModel';
-let Schema = mongoose.Schema;
 
-var userSchema = new Schema({
+var userSchema = mongoose.Schema({
     facebook : {
         id: {type: String},
         token: {type: String},
@@ -12,7 +11,7 @@ var userSchema = new Schema({
         created: {type: String}
     },
     foodTruck: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'foodtruck',
+        type: mongoose.Schema.Types.ObjectId, ref: 'Foodtruck',
         ft: foodtruckSchema
     },
     favorites: [{

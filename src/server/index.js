@@ -10,8 +10,8 @@ import config from './configs/config'
 // Express
 let app = express();
 
-// mongoose.connect(config.db.url);
-// mongoose.connection.once('open', () => console.log("Successfully connected to mongodb"));
+mongoose.connect(config.url);
+mongoose.connection.once('open', () => console.log("Successfully connected to mongodb"));
 
 //require('./config/passport.js')(passport);
 

@@ -1,6 +1,6 @@
 import {readUser, deleteUser, showUser, addFavorite, getFavorite, deleteFavorite,addReview} from './UserController'
 
-module.exports = function (app) {
+module.exports = (app) => {
     app.get('/api/users', readUser);
     app.get('/api/users/:id', showUser);
     app.delete('/api/users/:id', deleteUser);
