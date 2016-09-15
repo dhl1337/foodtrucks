@@ -35,7 +35,7 @@ io.on('connection', socket => {
 });
 
 // Facebook Authentication Endpoints
-// require('./routes/facebookRoutes.js')(app);
+require('./facebook/FacebookRoute')(app);
 //
 // // User Endpoints
 // require('./routes/userRoutes.js')(app);
