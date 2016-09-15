@@ -36,14 +36,14 @@ io.on('connection', socket => {
 
 // Facebook Authentication Endpoints
 require('./facebook/FacebookRoute')(app);
-//
-// // User Endpoints
-// require('./routes/userRoutes.js')(app);
-//
+
+// User Endpoints
+require('./user/UserRoute')(app);
+
 // Foodtruck Endpoints
 require('./foodtruck/FoodtruckRoute')(app);
-//
-// // Reviews
+
+// Reviews
 // require('./routes/reviewRoutes.js')(app);
 
 // Twilio
