@@ -13,7 +13,7 @@ let app = express();
 mongoose.connect(config.url);
 mongoose.connection.once('open', () => console.log("Successfully connected to mongodb"));
 
-//require('./config/passport.js')(passport);
+require('./configs/passport.js')(passport);
 
 // Express Middleware
 app.use(expressSession(config.session));
@@ -44,7 +44,7 @@ require('./user/UserRoute')(app);
 require('./foodtruck/FoodtruckRoute')(app);
 
 // Reviews
-// require('./routes/reviewRoutes.js')(app);
+require('./review/ReviewRoute')(app);
 
 // Twilio
 require('./twilio/TwilioRoute')(app);
