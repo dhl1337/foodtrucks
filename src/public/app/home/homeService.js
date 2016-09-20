@@ -3,7 +3,7 @@
         .module('forageApp')
         .service('homeService', homeService);
 
-    function HomeService($http, $state) {
+    function homeService($http, $state) {
 
         this.getCurrentuser = enforce => {
             return $http.get('/auth/current')
@@ -15,14 +15,9 @@
                 })
         };
 
-        this.getCurrentUserId = id => {
-            return $http.get('/api/users/' + id).then(response => response.data)
-        };
+        this.getCurrentUserId = id => $http.get('/api/users/' + id).then(response => response.data)
 
-        this.addReview = (id, obj) => {
-            return $http.post('/api/users/reviews/' + id, obj).then(response => response.data)
-        };
-
+        this.addReview = (id, obj) => $http.post('/api/users/reviews/' + id, obj).then(response => response.data)
 
     }
 })();
