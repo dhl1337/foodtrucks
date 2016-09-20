@@ -5,11 +5,12 @@
 
     function HomeController(foodtruckService, currentFoodtruck, currentUser, $state) {
         //console.log('controller loading');
-        var vm = this;
+        var vm = this,
+            refreshTimeout = null,
+            map = null,
+            infowindow = null;
+
         vm.initMap = initMap;
-        var refreshTimeout = null;
-        var map = null;
-        var infowindow = null;
         vm.foodtrucks = currentFoodtruck;
         vm.loginModal = loginModal;
         vm.openSideBar = openSideBar;
