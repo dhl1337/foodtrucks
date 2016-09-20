@@ -1,9 +1,9 @@
 (function () {
     angular
-        .module('forageApp')
-        .controller('ProfileController', ['HomeService', 'FoodtruckService', 'ProfileService','$stateParams', ProfileController]);
+        .module('foodtrucksApp')
+        .controller('ProfileController', ['HomeService', 'foodtruckService', 'ProfileService','$stateParams', ProfileController]);
 
-    function ProfileController (HomeService, FoodtruckService, ProfileService, $stateParams) {
+    function ProfileController (HomeService, foodtruckService, ProfileService, $stateParams) {
         var vm = this;
         vm.currentUserId = $stateParams.id;
 
@@ -11,7 +11,7 @@
         google.maps.visualRefresh = true;
         HomeService.getCurrentUserId(vm.currentUserId).then(user => vm.user = user);
 
-        FoodtruckService.getFoodtruck().then(foodtruck => vm.foodtruck = foodtruck);
+        foodtruckService.getFoodtruck().then(foodtruck => vm.foodtruck = foodtruck);
 
         vm.foodtrucksFavorite = () => {
             vm.arr = [];
